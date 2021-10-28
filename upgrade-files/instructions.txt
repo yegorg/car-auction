@@ -1,0 +1,10 @@
+Welcome to PHP Auctions v1.4
+
+In order to upgrade all you have to do is COPY & REPLACE (overwrite) the file contents from /upgrade-files/ into the main folder.
+
+Then, go to yoursiteURL.tld/home/upgrade to get the new database structure + instructions on how to setup the cron job
+
+For detailed docs, open the main documentation.html file
+
+
+

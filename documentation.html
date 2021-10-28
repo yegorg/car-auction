@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>PHP Auction Script</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;PHP Auction Script&rdquo; Documentation by &ldquo;crivion&rdquo; v1.4</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;PHP Auction Script&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: Apr 2018<br>
+					By: Alex Crivion<br>
+					Email: <a href="mailto:office@crivion.com">office@crivion.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/crivion">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#install-script">Uploading &amp; Installing</a></li>
+			<li><a href="#admin-panel">Manage Auctions</a></li>
+			<li><a href="#admin-tx">Manage Transactions</a></li>
+			<li><a href="#admin-categories">Manage Categories</a></li>
+			<li><a href="#admin-members">Manage Members</a></li>
+			<li><a href="#admin-comments">Manage Comments</a></li>
+			<li><a href="#admin-payment">Configure Payment Settings</a></li>
+			<li><a href="#admin-config">Configure Website Title, Logo, Social URL's and Contact Email</a></li>
+			<li><a href="#admin-seo">Configure SEO Title, Keywords, Description</a></li>
+			<li><a href="#admin-cron">Final Step - Setup Cronjob</a></li>
+			<li><a href="#upgrade">Upgrading from v1.3 to v1.4</a></li>
+		</ol>
+		
+		<hr>
+
+		<h3 id="install-script"><strong>A) Uploading &amp; Installing</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Connect to your hosting and upload the extracted zip file folder of the script to your domain. (must be under either root or subdomain. No subfolders please.)</li>
+				<li>Make sure <strong>.htaccess</strong> file is included otherwise the script will mallfunction as the file is required to do the mod_rewrite SEO friendly URL's job</li>
+				<li>Go to <strong>yoursite.com/install/</strong> and enter your database connection details and desired admin login credentials</li>
+			</ul>	
+
+			<img src="img/install.png" width="400" style="float: left;">
+			<img src="img/install-2.png" width="300" style="float: left; margin-top: 120px;">
+			
+		<hr>
+
+		<h3 id="admin-panel"><strong>B) Admin : Manage Auctions</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step A).</li>
+				<li>You will see a table with all the listings and their actions: delete, manually approve, manually set as featured, etc.</li>
+			</ul>	
+
+			<img src="assets/images/adminlistings.png" width="760" />
+		<hr>
+
+		<h3 id="admin-tx"><strong>C) Admin : Transactions</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step A).</li>
+				<li><strong>Important</strong> - this is the core of the business side of this script. <br />Here you <strong>generate paypal masspay file</strong> to use &amp; pay your auctioneers!</li>
+				<li><strong>Also</strong> you will need to click on <strong>"Set All Cleared"</strong> after paying using PayPal to <strong>reset everyone's balances</strong></li>
+			</ul>	
+
+			<img src="assets/images/admin-transactions.png" width="760" />
+		<hr>
+
+		<h3 id="admin-categories"><strong>E) Admin : Manage Auction Categories</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step A).</li>
+				<li>You will see a table with all the categories with an option to update or remove them.</li>
+				<li>There's also a form to quickly add a new auction category</li>
+			</ul>	
+
+			<img src="assets/images/admin-categories.png" width="760" />
+		<hr>
+
+
+		<h3 id="admin-members"><strong>E) Admin : Members</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step A).</li>
+				<li>You will see a table with all the users with an option to remove them.</li>
+			</ul>	
+
+			<img src="assets/images/adminusers.png" width="760" />
+		<hr>
+		
+
+		<h3 id="admin-comments"><strong>F) Admin : Comments</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step A).</li>
+				<li>You will see a table with all the comments with an option to remove them.</li>
+			</ul>	
+
+			<img src="assets/images/admin-comments.png" width="760" />
+		<hr>
+
+
+		<h3 id="admin-payment"><strong>G) Admin : Payment Settings</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step A).</li>
+				<li>You will see a form with the following fields: <strong>Listing Fee: the price to charge (in USD) for a regular listing</strong>, <strong>Featured fee</strong> - listings that appear on homepage and paypal email to <strong>collect payments</strong></li>
+			</ul>	
+
+			<img src="assets/images/admin-payment.png" width="760" />
+		<hr>
+
+		<h3 id="admin-config"><strong>H) Website Title, Logo, Social URL's and Contact Email</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step A).</li>
+				<li>You will see a form with which will help you configure Website Title (appears in header near logo), upload a logo image field, facebook &amp; twitter URLS (appears in footer) and contact email (for the form on the contact page)</li>
+			</ul>	
+
+			<img src="assets/images/adminconfig.png" width="760" />
+		<hr>
+
+		<h3 id="admin-seo"><strong>I) SEO Module</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step A).</li>
+				<li>You will see a form with the following fields: <strong>SEO TITLE, SEO KEYWORDS AND SEO DESCRIPTION</strong>.</li>
+				<li>All these will appear as <strong>meta tags</strong> on homepage</li>
+			</ul>	
+
+			<img src="assets/images/adminseo.png" width="760" />
+		<hr>
+
+		<h3 id="cron"><strong>I) Setting up the Cron Job</strong> - <a href="#toc">top</a></h3>
+		Please go to yoursite.com/cron-path.php for further instructions!
+
+		<hr>
+
+		<h3 id="upgrade"><strong>L) Upgrading from v1.3 to v1.4</strong> - <a href="#toc">top</a></h3>
+
+		<h4>This update includes:</h4>
+
+		- Added cronjob to pick winners for expired auctions without a BIN - not a manual feature anymore!<br>
+		- Take payments not only for BIN listings but also for auctions won by highest bidder.<br>
+		
+		<p>
+			<h1>Step 1 - Copy and overwrite all files from <strong>upgrade-files/*</strong> folder to the following place.</h1>
+
+			<pre>
+Controllers 
+- application/controllers/cron.php 
+- application/controllers/payments.php
+- application/controllers/users.php
+- application/controllers/home.php
+
+Views
+- application/views/sidebar.php
+- application/views/user-won.php
+- application/views/upgrade.php
+
+At the root folder ( ie. where index.php is located)
+cron-path.php
+			</pre>
+
+		</p>
+
+		<h1>Step 2 - Configure Cronjob (see step I)</h1>
+		<br>
+
+		<h1>Step 3 - Go to Database Upgrade - <strong>YourSiteURL.tld/home/upgrade</strong></h1>
+			
+		<hr>
+		
+		<p class="append-bottom alt large"><strong>Alex Crivion</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
